@@ -10,7 +10,8 @@ var server = net.createServer(function(conn) {
   i.unref();
 });
 server.listen(1337);
-enableDestroy(server);
+
+assert.equal(server, enableDestroy(server));
 
 var connected = 0;
 for (var i = 0; i < 10; i++) {
